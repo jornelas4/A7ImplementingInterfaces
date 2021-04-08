@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Invivo Service\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Invivo Service\\.nuget\\packages"
+    ]
+  }
+}

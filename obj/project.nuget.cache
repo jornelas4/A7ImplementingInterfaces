@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bbebA8q8enHsz0dqvMI6jU/MuHr6KVQVglqZRzMrssBiFwbxCadyaIcFIl1oz4JVvKHD0blq/KZccx0dh8se8g==",
+  "success": true,
+  "projectFilePath": "Z:\\ornelajl\\Drive\\WCTC\\NetDataBase\\Class7\\A7ImplementingInterfaces\\A7ImplementingInterfaces\\A7ImplementingInterfaces.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Invivo Service\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0-preview.2.21154.6\\microsoft.extensions.dependencyinjection.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "C:\\Users\\Invivo Service\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0-preview.2.21154.6\\microsoft.extensions.dependencyinjection.abstractions.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "C:\\Users\\Invivo Service\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

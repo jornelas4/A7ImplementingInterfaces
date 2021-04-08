@@ -1,0 +1,66 @@
+[
+  {
+    "MovieID": 1,
+    "Title": "Enter the Dragon",
+    "Genres": [
+      "Action",
+      "Martial Arts"
+    ]
+  },
+  {
+    "MovieID": 2,
+    "Title": "Real Steel",
+    "Genres": [
+      "Action",
+      "Adventure"
+    ]
+  },
+  {
+    "MovieID": 3,
+    "Title": "Sherlock Holmes",
+    "Genres": [
+      "Action",
+      "Suspensful"
+    ]
+  },
+  {
+    "MovieID": 4,
+    "Title": "Spenser",
+    "Genres": [
+      "Commedy",
+      "Action"
+    ]
+  },
+  {
+    "MovieID": 5,
+    "Title": "Iron Man",
+    "Genres": [
+      "Action",
+      "Suspense"
+    ]
+  },
+  {
+    "MovieID": 6,
+    "Title": "Jackie Chan",
+    "Genres": [
+      "Action",
+      "Comedy"
+    ]
+  },
+  {
+    "MovieID": 7,
+    "Title": "Godzilla vs King Kong",
+    "Genres": [
+      "Action",
+      "Sci-Fi"
+    ]
+  },
+  {
+    "MovieID": 8,
+    "Title": "Minions",
+    "Genres": [
+      "ANIMATION",
+      "ADVENTURE"
+    ]
+  }
+]
