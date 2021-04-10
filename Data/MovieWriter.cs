@@ -10,34 +10,34 @@ namespace A7ImplementingInterfaces.Data
 {
 public class MovieWriter : IRepository
     {
-       private string File = Path.Combine(Environment.CurrentDirectory, "Archive", "movies.json");
+       private string archive = Path.Combine(Environment.CurrentDirectory, "Archive", "movies.json");
         private List<Movie> ListOfMovies;
         
         public void WriteToFile(Movie movie)
         {
-            FileToList();
+            jsonFileToList();
             ListOfMovies.Add(movie);
 
-            using (StreamWriter sw = new StreamWriter(File))
+            using (var streamWriter = new StreamWriter(archive))
             {
                 string json = JsonConvert.SerializeObject(ListOfMovies, Formatting.Indented);
 
-                sw.Write(json);
+                streamWriter.Write(json);
             }
         }
 
-        public List<Movie> ReadFromFile()
+        public List<Movie> ReadFromJsonFile()
         {
-            FileToList();
+            jsonFileToList();
             return ListOfMovies;
         }
 
-        private void FileToList()
+        private void jsonFileToList()
         {
             string json;
-            using (StreamReader sr = new StreamReader(File))
+            using (var streamReader = new StreamReader(archive))
             {
-                json = sr.ReadToEnd();
+                json = streamReader.ReadToEnd();
             }
 
             ListOfMovies = JsonConvert.DeserializeObject<List<Movie>>(json);
@@ -45,7 +45,7 @@ public class MovieWriter : IRepository
 
         public int GetNextId()
         {
-            FileToList();
+            jsonFileToList();
             ListOfMovies.Sort((x,y) => x.MovieID.CompareTo(y.MovieID));
             return ListOfMovies.Last().MovieID + 1;
         }

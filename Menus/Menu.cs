@@ -9,18 +9,18 @@ namespace A7ImplementingInterfaces.Menus
 
 
     {
-        public bool ValidMenu { get; set; }
-        private readonly char _exitKey = 'Q';
+        public bool logicalMenu { get; set; }
+        private readonly char _terminate = 'Q';
         private readonly List<char> _menuChoices = new List<char> {'1', '2'};
         private IRepository _movieWriter;
 
         public Menu(IRepository writer)
         {
-            ValidMenu = true;
+            logicalMenu = true;
             _movieWriter = writer;
         }
 
-        public void DisplayMenu()
+        public void exhibitMenu()
         {
             char userInput;
             do
@@ -29,13 +29,14 @@ namespace A7ImplementingInterfaces.Menus
                 "Q. Exit");
                 userInput = Console.ReadKey().KeyChar;
                 Console.WriteLine();
-            } while (Char.ToUpper(userInput) != _exitKey && !_menuChoices.Contains(userInput));
+            } while (Char.ToUpper(userInput) != _terminate && !_menuChoices.Contains(userInput));
             
-            ProcessInput(userInput);
+            ProcedureInput(userInput);
         }
 
-        public void ProcessInput(char input)
+        public void ProcedureInput(char input)
         {
+            
             switch (input)
             {
                 case '1': 
@@ -46,8 +47,8 @@ namespace A7ImplementingInterfaces.Menus
                     break;
                 case 'q':
                 case 'Q':
-                    Console.WriteLine("Exiting...");
-                    ValidMenu = false;
+                    Console.WriteLine("This session has ended");
+                    logicalMenu = false;
                     break;
             }
         }
@@ -83,7 +84,7 @@ namespace A7ImplementingInterfaces.Menus
 
         public void PrintList()
         {
-            List<Movie> movies = _movieWriter.ReadFromFile();
+            List<Movie> movies = _movieWriter.ReadFromJsonFile();
 
             Console.WriteLine($"{"ID", -5} {"Title", -15} {"Genres", -30}");
 

@@ -6,7 +6,7 @@ namespace A7ImplementingInterfaces.Data
     public interface IRepository
     {
         void WriteToFile(Movie movie);
-        List<Movie> ReadFromFile();
+        List<Movie> ReadFromJsonFile();
         int GetNextId();
     }
 }

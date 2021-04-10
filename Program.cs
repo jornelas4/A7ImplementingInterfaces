@@ -17,9 +17,9 @@ namespace A7ImplementingInterfaces
 
             var menu = serviceProvider.GetService<IMenu>();
 
-            while (menu.ValidMenu)
+            while (menu.logicalMenu)
             {
-                menu.DisplayMenu();
+                menu.exhibitMenu();
             }
             
             Console.WriteLine("Thank you for using the  movie library.");

@@ -4,9 +4,9 @@ namespace A7ImplementingInterfaces.Menus
 {
 public interface IMenu
     {
-        bool ValidMenu { get; set; }
-        void DisplayMenu();
-        void ProcessInput(char input);
+        bool logicalMenu { get; set; }
+        void exhibitMenu();
+        void ProcedureInput(char input);
         void Add();
         Movie GetMovie();
         void PrintList();
