@@ -10,11 +10,11 @@ namespace A7ImplementingInterfaces.Menus
 
     public static class SearchEntertainment
     {
-        private static List<EntertainmentType> _listOfMedia;
+        private static List<EntertainmentType> _EntertainmentList;
         
-        public static void SearchList(List<EntertainmentType> mediaList)
+        public static void SearchList(List<EntertainmentType> entertainmentList)
         {
-            _listOfMedia = mediaList;
+            _EntertainmentList = entertainmentList;
             
             logics(GetUserInput());
         }
@@ -57,13 +57,13 @@ namespace A7ImplementingInterfaces.Menus
 
         private static void SearchTitle(string title)
         {
-            var listOfMatches = _listOfMedia.Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase));
+            var listOfMatches = _EntertainmentList.Where(m => m.Title.Contains(title, StringComparison.OrdinalIgnoreCase));
             DisplayResults(listOfMatches.ToList());
         }
 
         private static void SearchByGenre(string genre)
         {
-            var listOfMatches = _listOfMedia.Where(m => m.Genres.Contains(genre, StringComparer.OrdinalIgnoreCase));
+            var listOfMatches = _EntertainmentList.Where(m => m.Genres.Contains(genre, StringComparer.OrdinalIgnoreCase));
             DisplayResults(listOfMatches.ToList());
         }
 
