@@ -1,28 +1,28 @@
 ﻿using System;
 using A7ImplementingInterfaces.Data;
+using A7ImplementingInterfaces.ModelObjects;
 using A7ImplementingInterfaces.Menus;
 using Microsoft.Extensions.DependencyInjection;
 
-
-namespace A7ImplementingInterfaces
+namespace MediaLibrary
 {
     class Program
     {
         static void Main(string[] args)
         {
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IRepository, MovieWriter>()
+                .AddSingleton<FileWriter<Movie>, WriteMovie>()
                 .AddSingleton<IMenu, Menu>()
                 .BuildServiceProvider();
 
             var menu = serviceProvider.GetService<IMenu>();
 
-            while (menu.logicalMenu)
+            while (menu.ValidMenu)
             {
-                menu.exhibitMenu();
+                menu.DisplayMenu();
             }
             
-            Console.WriteLine("Thank you for using the  movie library.");
+            Console.WriteLine("Thanks for using the Redbox library.");
         }
     }
 }

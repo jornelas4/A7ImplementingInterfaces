@@ -1,66 +1,62 @@
-[
-  {
-    "MovieID": 1,
-    "Title": "Enter the Dragon",
-    "Genres": [
-      "Action",
-      "Martial Arts"
-    ]
-  },
-  {
-    "MovieID": 2,
-    "Title": "Real Steel",
-    "Genres": [
-      "Action",
-      "Adventure"
-    ]
-  },
-  {
-    "MovieID": 3,
-    "Title": "Sherlock Holmes",
-    "Genres": [
-      "Action",
-      "Suspensful"
-    ]
-  },
-  {
-    "MovieID": 4,
-    "Title": "Spenser",
-    "Genres": [
-      "Commedy",
-      "Action"
-    ]
-  },
-  {
-    "MovieID": 5,
-    "Title": "Iron Man",
-    "Genres": [
-      "Action",
-      "Suspense"
-    ]
-  },
-  {
-    "MovieID": 6,
-    "Title": "Jackie Chan",
-    "Genres": [
-      "Action",
-      "Comedy"
-    ]
-  },
-  {
-    "MovieID": 7,
-    "Title": "Godzilla vs King Kong",
-    "Genres": [
-      "Action",
-      "Sci-Fi"
-    ]
-  },
-  {
-    "MovieID": 8,
-    "Title": "Minions",
-    "Genres": [
-      "ANIMATION",
-      "ADVENTURE"
-    ]
-  }
-]
+{
+  "$type": "System.Collections.Generic.List`1[[A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
+      "MovieID": 1,
+      "Title": "Goldeneye",
+      "Genres": {
+        "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+        "$values": [
+          "Action",
+          "Spy"
+        ]
+      }
+    },
+    {
+      "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
+      "MovieID": 2,
+      "Title": "Halloween",
+      "Genres": {
+        "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+        "$values": [
+          "Horror"
+        ]
+      }
+    },
+    {
+      "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
+      "MovieID": 3,
+      "Title": "Pulp Fiction",
+      "Genres": {
+        "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+        "$values": [
+          "Drama"
+        ]
+      }
+    },
+    {
+      "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
+      "MovieID": 4,
+      "Title": "Harry Potter",
+      "Genres": {
+        "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+        "$values": [
+          "Fantasy",
+          "Action"
+        ]
+      }
+    },
+    {
+      "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
+      "MovieID": 5,
+      "Title": "Psycho",
+      "Genres": {
+        "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+        "$values": [
+          "Horror"
+        ]
+      }
+    }
+  ]
+}

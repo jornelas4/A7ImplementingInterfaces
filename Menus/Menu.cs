@@ -1,97 +1,119 @@
 using System;
 using System.Collections.Generic;
+using A7ImplementingInterfaces.ModelObjects;
 using A7ImplementingInterfaces.Data;
-using A7ImplementingInterfaces.MovieObjects;
 
 namespace A7ImplementingInterfaces.Menus
 {
     public class Menu : IMenu
-
-
     {
-        public bool logicalMenu { get; set; }
-        private readonly char _terminate = 'Q';
-        private readonly List<char> _menuChoices = new List<char> {'1', '2'};
-        private IRepository _movieWriter;
+        public bool ValidMenu { get; set; }
+        private readonly char _exitKey = 'Q';
+        private readonly List<char> _menuChoices = new List<char> {'1','2','3'};
+        private FileWriter<Movie> _movieWriter;
+        
+        
 
-        public Menu(IRepository writer)
+        public Menu(FileWriter<Movie> movieWriter)
         {
-            logicalMenu = true;
-            _movieWriter = writer;
+            ValidMenu = true;
+            _movieWriter = movieWriter;
         }
 
-        public void exhibitMenu()
+        public void DisplayMenu()
         {
             char userInput;
             do
             {
-                Console.WriteLine("What would you like to do:\n1. Add a movie\n2. Display all movies\n" +
-                "Q. Exit");
+                Console.WriteLine("Would you like to:\n1. Add a media object to the file\n2. Display a list of media\n3. Search\nQ. Exit");
                 userInput = Console.ReadKey().KeyChar;
                 Console.WriteLine();
-            } while (Char.ToUpper(userInput) != _terminate && !_menuChoices.Contains(userInput));
+            } while (Char.ToUpper(userInput) != _exitKey && !_menuChoices.Contains(userInput));
             
-            ProcedureInput(userInput);
+            logics(userInput);
         }
 
-        public void ProcedureInput(char input)
+        public void logics(char input)
         {
-            
             switch (input)
             {
                 case '1': 
-                    Add();
+                    Add(GetMediaType());
                     break;
                 case '2':
-                    PrintList();
+                    PrintList(GetMediaType());
+                    break;
+                case '3':
+                    SearchEntertainment.SearchList(CombineLists());
                     break;
                 case 'q':
                 case 'Q':
-                    Console.WriteLine("This session has ended");
-                    logicalMenu = false;
+                    Console.WriteLine("Exiting...");
+                    ValidMenu = false;
                     break;
             }
         }
 
-        public void Add()
+        public void Add(char input)
         {
-            _movieWriter.WriteToFile(GetMovie());
-            
-            Console.WriteLine("The movie has been added");
+            switch (input)
+            {
+                case '1':
+                    _movieWriter.WriteToFile(Initiator.GetMovie(_movieWriter.GetNextId()));
+                    Console.WriteLine("Your movie has been added");
+                    break;
+            }
         }
 
-        public Movie GetMovie()
+        public void PrintList(char input)
         {
-            Console.WriteLine("Enter the movie title?");
-            string title = Console.ReadLine();
+            switch (input)
+            {
+                case '1':
+                    List<Movie> movies = _movieWriter.ReadFromFile();
 
-            string userInput;
-            List<string> genres = new List<string>();
+                    Console.WriteLine($"{"ID", -5} {"Title", -30} {"Genres", -50}");
 
+                    foreach (var m in movies)
+                    {
+                        Console.WriteLine(m.ToString());
+                    }
+
+                    break;
+            }
+
+        }
+
+        public char GetMediaType()
+        {
+            List<char> validInputs = new List<char> {'1'};
+            
+            char userInput;
             do
             {
-                Console.WriteLine("Please enter genre (S to stop):");
-                userInput = Console.ReadLine().ToUpper();
+                Console.WriteLine("1. Movie");
+                userInput = Console.ReadKey().KeyChar;
+                Console.WriteLine();
 
-                if (userInput != "S") 
+                if (!validInputs.Contains(userInput))
                 {
-                    genres.Add(userInput);
+                    Console.WriteLine(" Not a valid option. Try again.");
                 }
-            } while (userInput != "S");
+            } while (!validInputs.Contains(userInput));
 
-            return new Movie(_movieWriter.GetNextId(), title, genres);
+            return userInput;
         }
 
-        public void PrintList()
+        private List<EntertainmentType> CombineLists()
         {
-            List<Movie> movies = _movieWriter.ReadFromJsonFile();
+            List<EntertainmentType> allMedia = new List<EntertainmentType>();
 
-            Console.WriteLine($"{"ID", -5} {"Title", -15} {"Genres", -30}");
-
-            foreach (var m in movies)
+            foreach (Movie m in _movieWriter.ReadFromFile())
             {
-                Console.WriteLine(m.ToString());
+                allMedia.Add(m);
             }
+
+            return allMedia;
         }
     }
 }
