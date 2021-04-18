@@ -19,10 +19,7 @@ namespace A7ImplementingInterfaces.Data
 
             using (StreamWriter sw = new StreamWriter(File))
             {
-                string json = JsonConvert.SerializeObject(
-                    ListOfMovies, 
-                    Formatting.Indented,
-                    new JsonSerializerSettings()
+                string json = JsonConvert.SerializeObject(ListOfMovies,Formatting.Indented,new JsonSerializerSettings()
                     {
                         TypeNameHandling = TypeNameHandling.All
                     });
@@ -37,7 +34,7 @@ namespace A7ImplementingInterfaces.Data
             return ListOfMovies;
         }
 
-        private void FileToList()
+        private void  FileToList()
         {
             string json;
             using (StreamReader sr = new StreamReader(File))
@@ -51,12 +48,13 @@ namespace A7ImplementingInterfaces.Data
                 {
                     TypeNameHandling = TypeNameHandling.All
                 });
+        
         }
 
         public int GetNextId()
         {
             FileToList();
-            ListOfMovies.Sort((x,y) => x.MovieID.CompareTo(y.MovieID));
+            ListOfMovies.Sort((a,b) => a.MovieID.CompareTo(b.MovieID));
             return ListOfMovies.Last().MovieID + 1;
         }
     }

@@ -4,57 +4,63 @@
     {
       "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
       "MovieID": 1,
-      "Title": "Goldeneye",
+      "Title": "Raya and the Last Dragon",
       "Genres": {
         "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
         "$values": [
+          "Animation",
           "Action",
-          "Spy"
+          "Adventure"
         ]
       }
     },
     {
       "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
       "MovieID": 2,
-      "Title": "Halloween",
+      "Title": "Kung Skull Island",
       "Genres": {
         "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
         "$values": [
-          "Horror"
+          "Action",
+          "Adventure",
+          "Fantasy"
         ]
       }
     },
     {
       "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
       "MovieID": 3,
-      "Title": "Pulp Fiction",
+      "Title": "The Circle",
       "Genres": {
         "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
         "$values": [
-          "Drama"
+          "Drama",
+          "Sci-Fi",
+          "Thriller"
         ]
       }
     },
     {
       "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
       "MovieID": 4,
-      "Title": "Harry Potter",
+      "Title": "Coming to America",
       "Genres": {
         "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
         "$values": [
-          "Fantasy",
-          "Action"
+          "Comedy",
+          "Romance"
         ]
       }
     },
     {
       "$type": "A7ImplementingInterfaces.ModelObjects.Movie, A7ImplementingInterfaces",
       "MovieID": 5,
-      "Title": "Psycho",
+      "Title": "The Girl Who Believe in Miracles",
       "Genres": {
         "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
         "$values": [
-          "Horror"
+          "Drama",
+          "Family"
         ]
       }
     }

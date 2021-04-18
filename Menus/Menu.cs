@@ -25,7 +25,7 @@ namespace A7ImplementingInterfaces.Menus
             char userInput;
             do
             {
-                Console.WriteLine("Would you like to:\n1. Add a media object to the file\n2. Display a list of media\n3. Search\nQ. Exit");
+                Console.WriteLine("Would you like to:\n1. Add a media object to the file\n2. Display a list of media\n3. Search\nQ. Terminate");
                 userInput = Console.ReadKey().KeyChar;
                 Console.WriteLine();
             } while (Char.ToUpper(userInput) != _exitKey && !_menuChoices.Contains(userInput));
@@ -48,7 +48,7 @@ namespace A7ImplementingInterfaces.Menus
                     break;
                 case 'q':
                 case 'Q':
-                    Console.WriteLine("Exiting...");
+                    Console.WriteLine("Closing transaction...");
                     ValidMenu = false;
                     break;
             }

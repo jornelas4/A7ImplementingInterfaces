@@ -31,7 +31,7 @@ namespace A7ImplementingInterfaces.Menus
 
                 if (!validInput.Contains(userInput))
                 {
-                    Console.WriteLine("Not a valid option. Try again.");
+                    Console.WriteLine("Please try again that was not a valid option.");
                 }
             } while (!validInput.Contains(userInput));
 
@@ -69,7 +69,7 @@ namespace A7ImplementingInterfaces.Menus
 
         private static void DisplayResults(List<EntertainmentType> matches)
         {
-            Console.WriteLine($"Number of matches: {matches.Count}");
+            Console.WriteLine($"Matches Found: {matches.Count}");
             
             foreach (EntertainmentType m in matches)
             {
